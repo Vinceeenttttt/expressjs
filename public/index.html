@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>My Website</title>
-  </head>
-  <body>
-    <h1>My Website</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Imperial Hexology</title>
+</head>
+
+<body>
+  <div class="container mt-4">
+  <h1 class="text-center mb-3">Hexology</h1>
+<form action="/api/members" method="POST" class="mb-4">
+  <div class="form-group">
+    <label for="name">Please enter your URL link below:</label>
+    <input type="url" name="url" class="form-control">
+  </div>
+  <input type="submit" value="Summit" class="btn btn-primary btn-block">
+</form>
+<h4>Video:</h4>
+  <div class="wrapper">
+
+    <center><video width="800" controls>
+          <source src="video.mp4" type="video/mp4">
+    </video></center>
+
+  </div>
+</body>
+
 </html>
