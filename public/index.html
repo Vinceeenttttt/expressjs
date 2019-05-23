@@ -18,16 +18,32 @@
     <label for="name">Please enter your URL link below:</label>
     <input type="url" name="url" class="form-control">
   </div>
-  <input type="submit" value="Summit" class="btn btn-primary btn-block">
+  <input type="submit" value="Submit" class="btn btn-primary btn-block">
 </form>
-<h4>Video:</h4>
-  <div class="wrapper">
 
-    <center><video width="800" controls>
+<script>
+    function playPause(btn,vid) {
+      var vid = document.getElementById(vid);
+      if (vid.paused){ 
+        vid.play();
+        btn.innerHTML = "Pause";
+      }else{ 
+        vid.pause();
+        btn.innerHTML = "Play";
+      }
+    } 
+</script>
+
+<h4>Video:</h4>
+
+    <center><video id="my_video" width="800">
           <source src="video.mp4" type="video/mp4">
     </video></center>
 
+  <div id="video_controls_var">
+    <center><button id="playpausebtn" onclick="playPause(this,'my_video')">Play</button></center>
   </div>
+
 </body>
 
 </html>
