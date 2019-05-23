@@ -1,27 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const members = require('../../Members');
 const url = require('url');
+const fs = require('fs');
+const ytdl = require('ytdl-core');
 
-// Gets All Members
-//router.get('/', (req, res) => res.json(members));
-
-// Create Member
+// Download Video
 router.post('/', (req, res) => {
-  var newurl = new URL(req.body.url);
-  newurl.hostname = 'embed.ted.com';
+  ytdl(req.body.url)
+  .pipe(fs.createWriteStream('./public/video.mp4'));
 
-  const newMember = {
-    url: newurl,
-  };
-
-  if (!newMember.url) {
-    return res.status(400).json({ msg: 'Please include a url' });
-  }
-
-  members.push(newMember);
-  //res.json(members);
-  res.redirect('/');
+  setTimeout(function(){
+    res.redirect('/');
+  }, 15000);
 });
 
 module.exports = router;
